@@ -23,7 +23,7 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.vuongtc.uet.uber_shipper.R;
-import com.vuongtc.uet.uber_shipper.databases.MyApplication;
+import com.vuongtc.uet.uber_shipper.applications.MyApplication;
 import com.vuongtc.uet.uber_shipper.users.AccountInfo;
 
 //import com.facebook.CallbackManager;

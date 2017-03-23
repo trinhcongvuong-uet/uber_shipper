@@ -16,7 +16,7 @@ import com.alexzh.circleimageview.CircleImageView;
 import com.squareup.picasso.Picasso;
 import com.vuongtc.uet.uber_shipper.R;
 import com.vuongtc.uet.uber_shipper.adapters.ViewPagerAdapter;
-import com.vuongtc.uet.uber_shipper.databases.MyApplication;
+import com.vuongtc.uet.uber_shipper.applications.MyApplication;
 import com.vuongtc.uet.uber_shipper.fragments.AddressPostFragment;
 import com.vuongtc.uet.uber_shipper.fragments.AllPostFragment;
 import com.vuongtc.uet.uber_shipper.fragments.GpsPostFragment;

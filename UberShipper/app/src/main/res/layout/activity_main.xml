@@ -27,7 +27,7 @@
                 android:id="@+id/toolbar_title"
                 android:textSize="26dp"
                 android:gravity="center"
-                />x
+                />
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
