@@ -2,6 +2,7 @@ package com.vuongtc.uet.uber_shipper.activities;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -10,21 +11,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.alexzh.circleimageview.CircleImageView;
-import com.squareup.picasso.Picasso;
 import com.vuongtc.uet.uber_shipper.R;
 import com.vuongtc.uet.uber_shipper.adapters.ViewPagerAdapter;
 import com.vuongtc.uet.uber_shipper.applications.MyApplication;
+import com.vuongtc.uet.uber_shipper.databases.DatabaseManager;
 import com.vuongtc.uet.uber_shipper.fragments.AddressPostFragment;
 import com.vuongtc.uet.uber_shipper.fragments.AllPostFragment;
 import com.vuongtc.uet.uber_shipper.fragments.GpsPostFragment;
-import com.vuongtc.uet.uber_shipper.users.AccountInfo;
 
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private CircleImageView user_photo;
     private TextView user_email;
@@ -35,9 +35,19 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TextView toolbar_title;
 
+    private TextView tv_logout;
     private DrawerLayout drawerLayout;
+    private DatabaseManager databaseManager;
 
-    protected void onCreate(Bundle savedInstanceState) {
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//        initViews();
+//    }
+
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
@@ -50,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar_title = (TextView)findViewById(R.id.toolbar_title);
         toolbar_title.setText("UBER SHIPPER");
 
+        tv_logout = (TextView)findViewById(R.id.tv_logout);
+        tv_logout.setOnClickListener(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -64,23 +76,25 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         MyApplication myApplication = (MyApplication)getApplication();
-        AccountInfo accountInfo = myApplication.getAccountInfo();
+//        AccountInfo accountInfo = myApplication.getAccountInfo();
 
-        if(accountInfo.getUrlPhoto().equals(null)) {
-            Picasso.with(this).load(accountInfo.getUrlPhoto()).into(user_photo);
-        }
-        user_name.setText(accountInfo.getDisplayName());
-        user_email.setText(accountInfo.getEmail());
+        databaseManager = new DatabaseManager(this);
+        myApplication.setDatabaseManager(databaseManager);
+
+//        if(accountInfo.getUrlPhoto().equals(null)) {
+//            Picasso.with(this).load(accountInfo.getUrlPhoto()).into(user_photo);
+//        }
+//        user_name.setText(accountInfo.getDisplayName());
+//        user_email.setText(accountInfo.getEmail());
 
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new AllPostFragment(), "ALL");
         adapter.addFragment(new GpsPostFragment(), "GPS");
-        adapter.addFragment(new AddressPostFragment(), "ADDRESS");
+        adapter.addFragment(new AddressPostFragment(this), "ADDRESS");
         viewPager.setAdapter(adapter);
     }
 
@@ -104,6 +118,16 @@ public class MainActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(Gravity.LEFT);
         }else{
             drawerLayout.openDrawer(Gravity.LEFT);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+//            case R.id.tv_logout:
+//                googleLogout();
+            default:
+                break;
         }
     }
 }

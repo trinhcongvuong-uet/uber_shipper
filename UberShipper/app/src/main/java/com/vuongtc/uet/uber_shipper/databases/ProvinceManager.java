@@ -4,7 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.vuongtc.uet.uber_shipper.provinces.District;
-import com.vuongtc.uet.uber_shipper.provinces.Province;
+import com.vuongtc.uet.uber_shipper.provinces.Provinces;
 
 import java.util.ArrayList;
 
@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public class ProvinceManager {
 
-    private static final String SQL_GET_PROVINCES = "SELECT * FROM PROVINCES";
-    private static final String PROVINCE_ID = "PROVINCEID";
-    private static final String PROVINCE_NAME = "NAME";
-    private static final String PROVINCE_TYPE = "TYPE";
+    private static final java.lang.String SQL_GET_PROVINCES = "SELECT * FROM provinces";
+    private static final java.lang.String PROVINCE_ID = "provinceid";
+    private static final java.lang.String PROVINCE_NAME = "name";
+    private static final java.lang.String PROVINCE_TYPE = "type";
 
     private SQLiteDatabase database;
     private DistrictManager districtManager;
@@ -26,8 +26,8 @@ public class ProvinceManager {
         districtManager = new DistrictManager(database);
     }
 
-    public ArrayList<Province> getProvinces(){
-        ArrayList<Province> provinces = new ArrayList<Province>();
+    public ArrayList<Provinces> getProvinces(){
+        ArrayList<Provinces> provinces = new ArrayList<Provinces>();
 
         Cursor cursor = database.rawQuery(SQL_GET_PROVINCES,null);
         if(cursor != null) {
@@ -36,8 +36,8 @@ public class ProvinceManager {
             in_province_name = cursor.getColumnIndex(PROVINCE_NAME);
             in_province_type = cursor.getColumnIndex(PROVINCE_TYPE);
 
-            Province province;
-            String province_id, province_name, province_type;
+            Provinces province;
+            java.lang.String province_id, province_name, province_type;
             ArrayList<District> districts;
 
             cursor.moveToFirst();
@@ -47,7 +47,7 @@ public class ProvinceManager {
                 province_type = cursor.getString(in_province_type);
                 districts = districtManager.getDistricts(province_id);
 
-                province = new Province(province_id, province_name, province_type,districts);
+                province = new Provinces(province_id, province_name, province_type,districts);
                 provinces.add(province);
                 cursor.moveToNext();
             }

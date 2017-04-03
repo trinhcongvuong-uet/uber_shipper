@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class WardManager {
 
     private static final String SQL_GET_WARDS = "SELECT * FROM WARDS WHERE DISTRICTID = '";
-    private static final String WARD_ID = "WARDID";
-    private static final String WARD_NAME = "NAME";
-    private static final String WARD_TYPE = "TYPE";
-    private static final String WARD_LOCATION = "LOCATION";
-    private static final String WARD_DISTRICT_ID = "DISTRICTID";
+    private static final String WARD_ID = "wardid";
+    private static final String WARD_NAME = "name";
+    private static final String WARD_TYPE = "type";
+    private static final String WARD_LOCATION = "location";
+    private static final String WARD_DISTRICT_ID = "districtid";
 
     private SQLiteDatabase database;
 

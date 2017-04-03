@@ -5,7 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
 
-import com.vuongtc.uet.uber_shipper.provinces.Province;
+import com.vuongtc.uet.uber_shipper.provinces.District;
+import com.vuongtc.uet.uber_shipper.provinces.Provinces;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,8 +27,8 @@ public class DatabaseManager implements Serializable{
     private DistrictManager districtManager;
     private ProvinceManager provinceManager;
 
-    private final static String DB_PATH = Environment.getDataDirectory().getPath()+"/data/com.uet.cnpm.testtoeic/databases";
-    private static final String DB_NAME = "database_district.sqlite";
+    private final static java.lang.String DB_PATH = Environment.getDataDirectory().getPath()+"/data/com.vuongtc.uet.uber_shipper/databases";
+    private static final java.lang.String DB_NAME = "database_district.sqlite";
 
     public DatabaseManager(Context mContext) {
         this.mContext = mContext;
@@ -37,18 +38,26 @@ public class DatabaseManager implements Serializable{
 
 
     public void openDB(){
-        String path = DB_PATH+"/"+DB_NAME;
+        java.lang.String path = DB_PATH+"/"+DB_NAME;
         if(database==null||database.isOpen()==false){
             database = SQLiteDatabase.openDatabase(DB_PATH+"/"+DB_NAME,null,SQLiteDatabase.OPEN_READWRITE);
         }
     }
 
-    public ArrayList<Province> getProvinces(){
+    public ArrayList<Provinces> getProvinces(){
         openDB();
         provinceManager = new ProvinceManager(database);
-        ArrayList<Province> provinces = provinceManager.getProvinces();
+        ArrayList<Provinces> provinces = provinceManager.getProvinces();
         closeDB();
         return provinces;
+    }
+
+    public ArrayList<District> getDistricts(String provinceid){
+        openDB();
+        districtManager = new DistrictManager(database);
+        ArrayList<District> districts = districtManager.getDistricts(provinceid);
+        closeDB();
+        return districts;
     }
 
     public void closeDB(){
@@ -71,7 +80,7 @@ public class DatabaseManager implements Serializable{
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             int lenght;
             byte buff[] = new byte[1024];
-            String result = "";
+            java.lang.String result = "";
             while ((lenght = inputStream.read(buff))>0){
                 fileOutputStream.write(buff,0,lenght);
             }

@@ -17,6 +17,7 @@ public class Ward {
         this.ward_location = ward_location;
         this.district_id = district_id;
     }
+    
 
     public String getWard_id() {
         return ward_id;

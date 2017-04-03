@@ -14,11 +14,11 @@ import java.util.ArrayList;
 public class DistrictManager {
 
     private static final String SQL_GET_DISTRICTS = "SELECT *FROM DISTRICTS WHERE PROVINCEID = '";
-    private static final String DISTRICT_ID = "DISTRICTID";
-    private static final String  DISTRICT_NAME= "NAME";
-    private static final String  DISTRICT_TYPE= "TYPE";
-    private static final String  DISTRICT_LOCATION= "LOCATION";
-    private static final String  DISTRICT_PROVINCE_ID= "PROVINCEID";
+    private static final String DISTRICT_ID = "districtid";
+    private static final String  DISTRICT_NAME= "name";
+    private static final String  DISTRICT_TYPE= "type";
+    private static final String  DISTRICT_LOCATION= "location";
+    private static final String  DISTRICT_PROVINCE_ID= "provinceid";
 
     private SQLiteDatabase database;
     private WardManager wardManager;
