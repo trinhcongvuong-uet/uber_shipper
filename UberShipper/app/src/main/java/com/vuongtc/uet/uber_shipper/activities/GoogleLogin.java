@@ -25,7 +25,7 @@ import com.vuongtc.uet.uber_shipper.users.AccountInfo;
  */
 public class GoogleLogin extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
-//    private static final Provinces TAG = LoginActivity.class.getSimpleName();
+//    private static final Provinces TAG = ShipperLoginActivity.class.getSimpleName();
     public static final int GG_SIGN_IN = 001;
 
     private GoogleApiClient mGoogleApiClient;

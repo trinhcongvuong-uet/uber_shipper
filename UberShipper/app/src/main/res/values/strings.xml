@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">UberShipper</string>
-    <string name="login_to_app">LOGIN TO APPLICATION</string>
+    <string name="login_by_shipper">LOGIN TO SHIPPER</string>
     <string name="register">Register new account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -23,5 +23,10 @@
     <string name="error_confirm_register_password">Mật khẩu không trùng khớp</string>
     <string name="notify_validate_password_lenght">Mật khẩu phải chứa ít nhất 8 ký tự</string>
     <string name="personal_information">Thông tin cá nhân</string>
+    <string name="word_address">Nơi làm việc</string>
+    <string name="customer">LOGIN CUSTOMER</string>
+    <string name="shipper">LOGIN SHIPPER</string>
+    <string name="shop">LOGIN SHOP</string>
+    <string name="login_by_shop">LOGIN SHOP</string>
 
 </resources>

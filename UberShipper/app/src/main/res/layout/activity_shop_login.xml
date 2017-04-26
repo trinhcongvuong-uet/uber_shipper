@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".activities.ShipperLoginActivity">
-
+    tools:context="com.vuongtc.uet.uber_shipper.activities.ShopLoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/shop_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/shop_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -91,7 +91,7 @@
         android:layout_height="76dp"
         android:layout_above="@+id/viewName"
         android:layout_marginBottom="20dip"
-        android:text="@string/login_by_shipper"
+        android:text="@string/login_by_shop"
         android:gravity="center"
         android:textSize="30dip"
         android:textColor="@android:color/white"
@@ -100,7 +100,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="26dp"
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_login_by_shop"
         android:layout_below="@+id/ln_pass"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="36dp"
@@ -121,8 +121,8 @@
         android:layout_height="36dp"
         android:orientation="horizontal"
         android:layout_below="@+id/ln_pass"
-        android:layout_toRightOf="@+id/btn_login"
-        android:layout_toEndOf="@+id/btn_login"
+        android:layout_toRightOf="@+id/btn_login_by_shop"
+        android:layout_toEndOf="@+id/btn_login_by_shop"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
         android:gravity="center"
@@ -131,7 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/register"
-            android:id="@+id/tv_register"
+            android:id="@+id/tv_register_shop"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:gravity="center"
@@ -144,31 +144,8 @@
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:src="@drawable/account_plus"
-            android:id="@+id/iv_register"
+            android:id="@+id/iv_register_shop"
             />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp">
-        <com.google.android.gms.common.SignInButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/login_google"
-            ></com.google.android.gms.common.SignInButton>
-
-        <!--<com.facebook.login.widget.LoginButton-->
-            <!--android:layout_width="240dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:id="@+id/login_facebook"-->
-            <!--/>-->
     </LinearLayout>
 
 </RelativeLayout>

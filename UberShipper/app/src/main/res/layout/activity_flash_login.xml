@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vuongtc.uet.uber_shipper.activities.FlashLoginActivity"
+    android:background="@color/WhiteColor"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:id="@+id/btn_login_customer"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="76dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:text="@string/customer"
+        android:textColor="@color/WhiteColor"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:typeface="serif"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        ></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:id="@+id/btn_login_shipper"
+        android:layout_below="@+id/btn_login_customer"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:text="@string/shipper"
+        android:textColor="@color/WhiteColor"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:typeface="serif"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        ></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:id="@+id/btn_login_by_shop"
+        android:layout_below="@+id/btn_login_shipper"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:text="@string/shop"
+        android:textColor="@color/WhiteColor"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:typeface="serif"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        ></Button>
+
+
+
+</RelativeLayout>
